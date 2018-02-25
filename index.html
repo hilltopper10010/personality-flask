@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        padding: 10px;
+    }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .menu {
+        width: 10%;
+    }
+
+    .content {
+        width: 75%;
+        font-family: "Verdana";
+        color: #EBF4FA;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        margin-top: 140px;
+        padding: 0;
+    }
+    .menu li {
+        padding: 5px;
+        margin-bottom: 8px;
+        background-color: #33b5e5;
+        color: #ffffff;
+    }
+
+    form {
+        font-family: "Verdana";
+        color: #EBF4FA;
+        text-align: left;
+    }
+
+    .selector {
+        width: 100px;
+        height: 50px;
+    }
+
+    .radio {
+        width: 100px;
+        height: 85px;
+    }
+
+    .checkbox {
+        width: 100px;
+        height: 210px;
+    }
+
+
+</style>
+<div class="clearfix">
+  <div class="column menu">
+      <ul>
+          <li><img src="{{url_for('static', filename='musicnote.png')}}", alt="Music", class="radio"></li>
+          <li><img src="{{url_for('static', filename='school.png')}}", alt="Blackboard", class="selector"></li>
+          <li><img src="{{url_for('static', filename='a+.png')}}", alt="Grade", class="radio"></li>
+          <li><img src="{{url_for('static', filename='USA.png')}}", alt="Map", class="selector"></li>
+          <li><img src="{{url_for('static', filename='beach.png')}}", alt="Beach", class="radio"></li>
+          <li><img src="{{url_for('static', filename='pets.png')}}", alt="Pets", class="selector"></li>
+          <li><img src="{{url_for('static', filename='mansion.png')}}", alt="Home", class="radio"></li>
+          <li><img src="{{url_for('static', filename='sports.png')}}", alt="Sports", class="selector"></li>
+          <li><img src="{{url_for('static', filename='businessman.png')}}", alt="Businessman", class="checkbox"></li>
+      </ul>
+  </div>
+
+  <div class="column content">
+    <h1>Job Predicting Questionnaire</h1>
+    <form action="{{url_for('index')}}" method="post">
+    Name: </br>
+    <input type="text" name = "name"></br>
+    <p>
+        What is your favorite type of music?</br>
+        <input type="radio" name = "music" value=10>Rap</br>
+        <input type="radio" name = "music" value=-10>Pop</br>
+        <input type="radio" name = "music" value=4>Jazz</br>
+        <input type="radio" name = "music" value=6>Rock</br>
+    </p>
+    What is your favorite school subject?</br>
+    <select name="subject">
+        <option value="math">Math</option>
+        <option value="english">English</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="language">Language</option>
+        <option value="art">Arts/Elective</option>
+    </select>
+    <p>
+        What is your average grade?<br/>
+        <input type="radio" name = "grade" value="A">A</br>
+        <input type="radio" name = "grade" value="B">B</br>
+        <input type="radio" name = "grade" value="C">C</br>
+        <input type="radio" name = "grade" value="D">D</br>
+    </p>
+    What region would you move to?</br>
+    <select name="region">
+        <option value=3>Northeast</option>
+        <option value=-2>Southeast</option>
+        <option value=1>Midwest</option>
+        <option value=-3>South</option>
+        <option value=4>Northwest</option>
+        <option value=2>Southwest</option>
+    </select>
+    <p>
+        What type of place would you move to?</br>
+        <input type="radio" name = "environment" value=2>Beach<br/>
+        <input type="radio" name = "environment" value=10>City<br/>
+        <input type="radio" name = "environment" value=4>Mountains<br/>
+        <input type="radio" name = "environment" value=-10>Forest<br/>
+    </p>
+    What pet would you want most?</br>
+    <select name="pet">
+        <option value=10>Dog</option>
+        <option value=-4>Cat</option>
+        <option value=6>Dolphin</option>
+        <option value=-8>Monkey</option>
+        <option value=2>Fish</option>
+        <option value=-6>Lizard</option>
+    </select><br/>
+    <p>
+        What type of home would you want to live in?<br/>
+        <input type="radio" name="home" value=10>Mansion<br/>
+        <input type="radio" name="home" value=8>Apartment<br/>
+        <input type="radio" name="home" value=-4>Tent<br/>
+        <input type="radio" name="home" value=-8>RV<br/>
+        <input type="radio" name="home" value=2>Castle<br/>
+    </p>
+    What is your favorite sport?<br/>
+    <select name="sport">
+        <option value=8>Basketball</option>
+        <option value=-4>Baseball</option>
+        <option value=4>Football</option>
+        <option value=6>Soccer</option>
+        <option value=10>Tennis</option>
+        <option value=-2>Lacrosse</option>
+        <option value=-8>Hockey</option>
+    </select><br/>
+    <p>
+        Which characteristics do you see in yourself?<br/>
+        <input type="checkbox" name="loyal">Loyal<br/>
+        <input type="checkbox" name="problem-solver">Problem-Solver<br/>
+        <input type="checkbox" name="eager">Eager to Learn and Contribute<br/>
+        <input type="checkbox" name="collaborative">Collaborative<br/>
+        <input type="checkbox" name="determined">Determined and Persistent<br/>
+        <input type="checkbox" name="flexible">Flexible<br/>
+        <input type="checkbox" name="work-ethic">Work Ethic<br/>
+        <input type="checkbox" name="techincal">Technical<br/>
+        <input type="checkbox" name="honest">Honest<br/>
+        <input type="checkbox" name="communication">Effective Communicator<br/>
+    </p>
+    <button type="submit">Submit</button>
+</form>
+  </div>
+</div>
+{% endblock %}
