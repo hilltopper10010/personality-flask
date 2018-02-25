@@ -1,0 +1,3 @@
+All of the HTML files are in a directory called templates
+
+Also, there is a directory called static containing all of the images referenced in index.html
