@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+    h1 {
+        font-family: "Verdana";
+        color: #EBF4FA;
+        margin: 25px 100px 50px 100px;
+        text-align: center;
+    }
+    h2 {
+        font-family: "Verdana";
+        color: #EBF4FA;
+        margin: 25px 100px 50px 100px;
+        text-align: center;
+    }
+    body {
+        background-color: #1569C7;
+        font-family: "Verdana";
+        color: #EBF4FA;
+    }
+    p {
+        font-family: "Verdana";
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    #links {
+        background-color: #EBF4FA;
+        padding: 15px;
+        font-family: "Verdana";
+        font-size: 16pt;
+        text-align: center;
+        color: #1569C7;
+        margin:25px 400px 160px;
+    }
+</style>
+<head>
+    <h1>Future Job: {{job}}</h1>
+    <h2>Salary: {{salary}}</h2>
+</head>
+<body>
+    <p>{{overalldescription}}  Because of that, we think that you, {{name}}, are destined to be a {{job}} in your future.  The median salary for {{job}}s is {{salary}}.  {{description}}  Below is some information regarding furthering your education and maintaining a high level of academic success.</p>
+    <div id="links">
+        <a href="https://www.teenvogue.com/story/how-to-choose-a-college">Finding Your Ideal College</a>
+        <a href="https://www.nacacfairs.org/learn/decide/avoiding-senioritis/">Avoiding Senioritis</a>
+    </div>
+</body>
+{% endblock %}
